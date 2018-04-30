@@ -3,6 +3,7 @@ package event
 import (
 	"context"
 	errs "errors"
+	"net/smtp"
 
 	"github.com/ONSdigital/dp-notification-sender/schema"
 	"github.com/ONSdigital/go-ns/kafka"
@@ -87,6 +88,22 @@ func processMessage(message kafka.Message) {
 	}
 
 	log.Debug("event received", log.Data{"event": event})
+
+	err = smtp.SendMail(
+		"localhost:1025",
+		nil,
+		"no-reply@ons.gov.uk",
+		[]string{event.Email},
+		[]byte(`To: Bob <bob@email.com>
+From: ONS <ons@ons.gov.uk>
+Subject: Some kind of subject
+
+This is the email body.`),
+	)
+	if err != nil {
+		log.Error(err, log.Data{"message": "failed to unmarshal event"})
+		return
+	}
 
 	log.Debug("event processed - committing message", log.Data{"event": event})
 	message.Commit()
