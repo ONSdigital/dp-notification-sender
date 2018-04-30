@@ -1,7 +1,7 @@
 dp-dataset-exporter
 ================
 
-Takes a filter job and produces a filtered dataset.
+Takes a completed filter job message and produces notification
 
 ### Getting started
 
