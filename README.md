@@ -17,7 +17,7 @@ environment variables, or with a link to a configuration guide.
 
 | Environment variable        | Default                              | Description
 | --------------------------- | ------------------------------------ | -----------
-| BIND_ADDR                   | :22500                               | The host and port to bind to
+| BIND_ADDR                   | :23456                               | The host and port to bind to
 | KAFKA_ADDR                  | localhost:9092                       | The address of Kafka
 | FILTER_JOB_CONSUMER_TOPIC   | filter-job-submitted                 | The name of the topic to consume messages from
 | FILTER_JOB_CONSUMER_GROUP   | dp-dataset-exporter                  | The consumer group this application to consume filter job messages
