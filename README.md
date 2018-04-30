@@ -1,6 +1,8 @@
 dp-dataset-exporter
 ================
 
+⚠️ 10% PROJECT - DO NOT DEPLOY
+
 Takes a completed filter job message and produces notification
 
 ### Getting started
