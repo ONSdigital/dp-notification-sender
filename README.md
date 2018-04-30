@@ -1,4 +1,4 @@
-dp-dataset-exporter
+dp-notification-sender
 ================
 
 ⚠️ 10% PROJECT - DO NOT DEPLOY
